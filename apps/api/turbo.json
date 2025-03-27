@@ -1,8 +1,14 @@
 {
+  "$schema": "https://turbo.build/schema.json",
   "extends": ["//"],
+
   "tasks": {
+    "dev": {
+      "passThroughEnv": ["DB_FILE_NAME"],
+      "inputs": [".env"]
+    },
     "build": {
-      "env": ["PORT"],
+      "env": ["PORT", "DB_FILE_NAME"],
       "outputs": ["dist/**"]
     }
   }
